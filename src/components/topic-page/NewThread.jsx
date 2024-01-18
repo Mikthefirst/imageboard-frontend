@@ -1,7 +1,16 @@
 import React, { useState } from "react";
 import style from "./styles/NewPost.module.css";
 
-function NewPostForm({ threadId }) {
+const closedBtn = {
+  textAlign: "center",
+  minWidth: "50px",
+  minHeight: "50px",
+  backgroundColor: "blue",
+  color: "black",
+  fontSize: "80%",
+};
+
+function NewThread() {
   const [isVisible, setIsVisible] = useState(false);
   const [comment, setComment] = useState("");
   const [name, setName] = useState("");
@@ -19,7 +28,7 @@ function NewPostForm({ threadId }) {
   };
 
   const handleSendPost = async () => {
-    const response = await fetch("http://localhost:3001/api/post", {
+    const response = await fetch("http://localhost:3001/api/add-thread", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -36,13 +45,13 @@ function NewPostForm({ threadId }) {
 
   return (
     <div>
-      <button onClick={handleButtonClick}>
+      <button className={closedBtn} onClick={handleButtonClick}>
         {isVisible ? "Скрыть" : "Показать"}
       </button>
       {isVisible && (
         <table>
           <tr>
-            <td className={style.left}>Name:</td>
+            <td className={style.left}>Thread Name:</td>
             <td className={style.right}>
               <input type="text" value={name} onChange={handleNameChange} />
             </td>
@@ -72,4 +81,4 @@ function NewPostForm({ threadId }) {
   );
 }
 
-export default NewPostForm;
+export default NewThread;
