@@ -1,0 +1,33 @@
+.top-thread {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  min-height: 30px;
+  justify-content: space-around;
+  box-sizing: border-box;
+  font-size: 80%;
+  background-color: #b7c5d9;
+}
+.anon {
+  color: purple !important;
+}
+.thread-body {
+  background-color: #d6daf0;
+  border: 1px solid #b7c5d9;
+}
+
+hr {
+  display: block;
+  unicode-bidi: isolate;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  overflow: hidden;
+  border-style: inset;
+  border-width: 1px;
+}
+/*
+.add-post {
+    color: #af0a0f; красный на реплаях
+}*/
